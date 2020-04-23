@@ -2,9 +2,9 @@
 ob_start();
 session_start(); // start a new session or continues the previous
 
-if( isset($_SESSION['user'])!="" ){
- header("Location: user/home.php" ); // redirects to home.php
-}
+// if( isset($_SESSION['user'])!="" ){
+//  header("Location: user/home.php" ); // redirects to home.php
+// }
 include_once 'connect/dbconnect.php';
 $error = false;
 if ( isset($_POST['btn-signup']) ) {
@@ -223,14 +223,14 @@ $image;
  </div>
  <div>
   <?php
-if ( isset($_POST['btn-signup']) ) {
+if ( isset($_POST['btn-signup'])) {
 $sql = "SELECT user_img FROM user WHERE email='$email'";
 $result = mysqli_query($conn,$sql);
 $row = mysqli_fetch_array($result);
 
-$image = $row['name'];
-$image_src = "upload/".$image;}?>
-<img src='<?php echo $image_src;  ?>' >
+$image = $row['user_img'];
+
+echo '<img alt="'.$row['first_name'].'" src="'.$image.'">';} ?>
 
 
  </div>

@@ -7,12 +7,12 @@ require_once '../connect/dbconnect.php';
 // if session is not set this will redirect to login page
 
 // select logged-in users details
-$user=$_SESSION['user'];
 
 
-$course_id=$_POST['course'];
 
-echo $sql="INSERT INTO c_relation (user_id,course_id)VALUES($user,$course_id)";
+$user_id=$_POST['user'];
+
+echo $sql="UPDATE `user` SET `active`='blocked' WHERE user_id=$user_id";
  mysqli_query($conn,$sql);
  if(mysqli_query($conn,$sql)){
         echo "insert success";}

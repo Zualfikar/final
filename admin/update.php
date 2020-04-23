@@ -1,10 +1,7 @@
-
 <?php
 ob_start();
 session_start();
-require_once '../connect/dbconnect.php';
-
-// select logged-in users details
+require_once '../connect/dbconnect.php'; 
 if( !isset($_SESSION['user' ]) ) {
  header("Location: ../index.php");
  exit;
@@ -20,63 +17,18 @@ if($userRow["status"] == 'user'){
   exit;
 }
 
-if($_POST){
-$title=$_POST["title"];
-$type=$_POST["type1"];
-$level=$_POST["type2"];
-$term=$_POST["type3"];
-$place=$_POST["place"];
-$price=$_POST["price"];
-$capacity=$_POST["capacity"];
-$image=$_POST["image"];
-//image
-  $name = $_FILES['file']['name'];
- 
-  $target_dir = "upload/";
-  $target_file = $target_dir . basename($_FILES["file"]["name"]);
-
-  // Select file type
-  $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
-
-  // Valid file extensions
-  $extensions_arr = array("jpg","jpeg","png","gif");
-//image
-
-  
-  
- if( in_array($imageFileType,$extensions_arr) ){
- 
-    // Convert to base64 
-    $image_base64 = base64_encode(file_get_contents($_FILES['file']['tmp_name']) );
-    $image2 = 'data:image/'.$imageFileType.';base64,'.$image_base64;
-    
-  }
-
-//image
 
 
-
-$duration=$_POST["duration"];
-$times=$_POST["times"];
-$teachers=$_POST["teachers"];
-$benefits=$_POST["benefits"];
-$method=$_POST["method"];
-$requirments=$_POST["requirments"];
-$description=$_POST["description"];
-$content=$_POST["content"];
-$long_des=$_POST["long_des"];
-$start_date=$_POST["start_date"];
-$end_date=$_POST["end_date"];
-
-  $sql="INSERT INTO course (title,type,level,term,place,price,capacity,course_img,duration,times,teachers,benefits,method,requirements,description,content,long_des,start_date,end_date,long_img) VALUES ('$title','$type','$level','$term','$place','$price','$capacity','$image','$duration','$times','$teachers','$benefits','$method','$requirments','$description','$content','$long_des','$start_date','$end_date','$image2')";
-  
-  mysqli_query($conn,$sql);
-  
-
+if($_GET["id"]){
+	$id=$_GET["id"];
+	$sql="SELECT * FROM course WHERE course_id=$id";
+	$result= mysqli_query($conn,$sql);
+	$row= $result->fetch_assoc();
 }
 
+ ?>
 
-?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -114,6 +66,7 @@ $end_date=$_POST["end_date"];
 
 </head>
 <body>
+
  <!-- ======= Top Bar ======= -->
   <section id="topbar" class="d-none d-lg-block">
     <div class="container d-flex">
@@ -153,18 +106,18 @@ $end_date=$_POST["end_date"];
   </header><!-- End Header -->
 
   <div class="container" >
-    <form id="foo" method="post"  action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>"  autocomplete="off" enctype='multipart/form-data' >
- <!-- <form id="foo"  method="post" > -->
+ <form id="foo"  method="post" >
+ 	<input type="hidden" name="course_id" value="<?php echo $row['course_id'] ?>">
   <div class="row m-4 p-4 bg-light rounded" style="opacity: 0.9;">
     <div class="col-6 border rounded" >
   <div class="form-group">
     <label for="exampleInputEmail1">Course Title</label>
-    <input type="title" class="form-control" name="title" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Title">
+    <input type="title" value="<?php echo $row['title'] ?>" class="form-control" name="title" id="exampleInputEmail1" aria-describedby="emailHelp" >
   <!--   <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
   </div>
    <div class="form-group">
      <label for="exampleInputEmail1">Course Type</label>
-  <input list="type1" class="form-control" name="type1">
+  <input list="type1" class="form-control" value="<?php echo $row['type'] ?>" name="type1">
 
 <datalist id="type1">
   <option value="full-stack">
@@ -180,7 +133,7 @@ $end_date=$_POST["end_date"];
   </div>
   <div class="form-group">
      <label for="exampleInputEmail1">Course Level</label>
-  <input list="type2" class="form-control" name="type2">
+  <input list="type2" value="<?php echo $row['level'] ?>" class="form-control" name="type2">
 
 <datalist id="type2">
   <option value="Beginners">
@@ -190,7 +143,7 @@ $end_date=$_POST["end_date"];
   </div>
   <div class="form-group">
      <label for="exampleInputEmail1">Course term</label>
-  <input list="type3" class="form-control" name="type3">
+  <input list="type3" value="<?php echo $row['term'] ?>" class="form-control" name="type3">
 
 <datalist id="type3">
   <option value="Ausbeldung">
@@ -200,37 +153,34 @@ $end_date=$_POST["end_date"];
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Place</label>
-    <input type="text" class="form-control" name="place" id="exampleInputPassword1" placeholder="Place">
+    <input type="text" value="<?php echo $row['place'] ?>" class="form-control" name="place" id="exampleInputPassword1">
   </div>
     <div class="form-group">
     <label for="exampleInputPassword1">Price</label>
-    <input type="text" class="form-control" name="price" id="exampleInputPassword1" placeholder="Price in €">
+    <input type="text" value="<?php echo $row['price'] ?>" class="form-control" name="price" id="exampleInputPassword1" >
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Capacity</label>
-    <input type="text" class="form-control" name="capacity" id="exampleInputPassword1" placeholder="Number of the trainees">
+    <input type="text" class="form-control" name="capacity" id="exampleInputPassword1" value="<?php echo $row['capacity'] ?>">
   </div>
    <div class="form-group">
-    <label for="exampleInputPassword1">Image AS link</label>
-    <input type="text" class="form-control" name="image" id="exampleInputPassword1" placeholder="Number of the trainees">
+    <label for="exampleInputPassword1">Image</label>
+    <input type="text" class="form-control" name="image" id="exampleInputPassword1" value="<?php echo $row['course_img'] ?>">
   </div>
 </div>
  <div class="col-6" style="">
-  <img src="../assets/img/blog-recent-3.jpg" width="480px" height="400pxpx" alt="">
-  
-    <input type="file"  name="file" style="background-color: Tomato;border-radius: 5px;margin-top: 10px;font-size: 20px;"  >
-  
-<div class="form-group" style="margin-top: 15px;">
+  <img src="<?php echo $row['course_img'] ?>" width="480px" height="400pxpx" alt="">
+<div class="form-group" style="margin-top: 65px;">
     <label for="exampleInputPassword1">Duration</label>
-    <input type="text" class="form-control" name="duration" id="exampleInputPassword1" placeholder="">
+    <input type="text" class="form-control" name="duration" id="exampleInputPassword1" value="<?php echo $row['duration'] ?>">
   </div>
     <div class="form-group">
     <label for="exampleInputPassword1">Times</label>
-    <input type="text" class="form-control" name="times" id="exampleInputPassword1" placeholder="">
+    <input type="text" class="form-control" name="times" id="exampleInputPassword1" value="<?php echo $row['times'] ?>">
   </div>
     <div class="form-group">
     <label for="exampleInputPassword1">Teachers</label>
-    <input type="text" class="form-control" name="teachers" id="exampleInputPassword1" placeholder="">
+    <input type="text" class="form-control" name="teachers" id="exampleInputPassword1" value="<?php echo $row['teachers'] ?>">
   </div>
 </div>
 </div>
@@ -239,32 +189,32 @@ $end_date=$_POST["end_date"];
    
    <div class="form-group">
     <label for="exampleFormControlTextarea1">Benefits</label>
-    <textarea class="form-control" name="benefits" id="exampleFormControlTextarea1" rows="3"></textarea>
+    <textarea class="form-control" name="benefits" id="exampleFormControlTextarea1" placeholder="<?php echo $row['benefits'] ?>" rows="3"></textarea>
   </div>
   <div class="form-group">
     <label for="exampleFormControlTextarea1">Method</label>
-    <textarea class="form-control" name="method" id="exampleFormControlTextarea1" rows="3"></textarea>
+    <textarea class="form-control" name="method" id="exampleFormControlTextarea1" placeholder="<?php echo $row['method'] ?>" rows="3"></textarea>
   </div>
    <div class="form-group">
     <label for="exampleFormControlTextarea1">Requirments</label>
-    <textarea class="form-control" name="requirments" id="exampleFormControlTextarea1" rows="3"></textarea>
+    <textarea class="form-control" name="requirments" id="exampleFormControlTextarea1" placeholder="<?php echo $row['requirements'] ?>" rows="3"></textarea>
   </div>
 </div>
 <div class="col-6 border">
    <div class="form-group">
     <label for="exampleFormControlTextarea1">Description</label>
-    <textarea class="form-control" name="description" id="exampleFormControlTextarea1" rows="3"></textarea>
+    <textarea class="form-control" name="description" id="exampleFormControlTextarea1" placeholder="<?php echo $row['description'] ?>" rows="3"></textarea>
   </div>
    
 
   <div class="form-group">
     <label for="exampleFormControlTextarea1">Content</label>
-    <textarea class="form-control" name="content" id="exampleFormControlTextarea1" rows="3"></textarea>
+    <textarea class="form-control" name="content" id="exampleFormControlTextarea1" placeholder="<?php echo $row['content'] ?>" rows="3"></textarea>
   </div>
     
   <div class="form-group">
     <label for="exampleFormControlTextarea1">More details</label>
-    <textarea class="form-control" name="long_des" id="exampleFormControlTextarea1" rows="3"></textarea>
+    <textarea class="form-control" name="long_des" id="exampleFormControlTextarea1" placeholder="<?php echo $row['long_des'] ?>" rows="3"></textarea>
   </div>
 </div>
 </div>
@@ -272,13 +222,13 @@ $end_date=$_POST["end_date"];
   <div class="col-6">
   <div class="form-group">
     <label for="exampleInputPassword1">Start date</label>
-    <input type="date" class="form-control" name="start_date" id="exampleInputPassword1" placeholder="">
+    <input type="date" class="form-control" name="start_date" id="exampleInputPassword1" value="<?php echo $row['start_date'] ?>">
   </div>
 </div>
 <div class="col-6">
    <div class="form-group">
     <label for="exampleInputPassword1">End date</label>
-    <input type="date" class="form-control" name="end_date" id="exampleInputPassword1" placeholder="">
+    <input type="date" class="form-control" name="end_date" id="exampleInputPassword1" value="<?php echo $row['end_date'] ?>">
   </div>
 </div>
 
@@ -288,10 +238,11 @@ $end_date=$_POST["end_date"];
 
 <div class="row justify-content-center ">
   
-  <input type="submit" value="Create" style="background-color: Tomato;width:100px;height:50px;border-radius: 5px;">
+  <input type="submit" value="Update" style="background-color: Tomato;width:100px;height:50px;border-radius: 5px;">
 </div>
 </form>
 </div>
+
 
 
 <!-- ======= Footer ======= -->
@@ -385,13 +336,13 @@ $end_date=$_POST["end_date"];
 
   <!-- Template Main JS File -->
   <script src="../assets/js/main.js"></script>
-<!-- <script>
+<script>
   
 // Variable to hold request
 var request;
 
 // Bind to the submit event of our form
-$("#foo").submit(function(event){
+$("#foo").click(function(event){
 
    // Prevent default posting of form - put here to work in case of errors
   event.preventDefault();
@@ -409,7 +360,7 @@ $("#foo").submit(function(event){
 
    
    request = $.ajax({
-       url: "a_create.php",
+       url: "a_update.php",
        type: "post",
        data: serializedData
    });
@@ -435,6 +386,6 @@ $("#foo").submit(function(event){
 });
 
 
-</script> -->
+</script>
 </body>
 </html>

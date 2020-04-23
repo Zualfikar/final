@@ -8,7 +8,6 @@ if( !isset($_SESSION['user' ]) ) {
  header("Location: ../index.php");
  exit;
 }
-
 // select logged-in user details
 $res=mysqli_query($conn, "SELECT * FROM user WHERE user_id=".$_SESSION['user']);
 
@@ -19,7 +18,11 @@ if($userRow["status"] == 'user'){
   exit;
 }
 
-
+$userRow=mysqli_fetch_array($res, MYSQLI_ASSOC);
+if($userRow["status"] == 'admin'){
+  header("Location: ../user/home.php");
+  exit;
+}
 ?>
 
 
@@ -30,7 +33,7 @@ if($userRow["status"] == 'user'){
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Admin Home</title>
+  <title>Super Admin</title>
   <meta content="" name="descriptison">
   <meta content="" name="keywords">
 
@@ -62,7 +65,6 @@ if($userRow["status"] == 'user'){
 
 <body>
 
- 
   <!-- ======= Top Bar ======= -->
   <section id="topbar" class="d-none d-lg-block">
     <div class="container d-flex">
@@ -76,6 +78,7 @@ if($userRow["status"] == 'user'){
       </div>
       <div class="cta">
         <a href="../user/home.php" class="scrollto">User Home</a>
+        <a href="../admin/home.php" class="scrollto">Admin Home</a>
       </div>
     </div>
   </section>
@@ -101,7 +104,7 @@ if($userRow["status"] == 'user'){
          
           
           <li><a href="#contact">Contact</a></li>
-          <li><a href="create.php">Create Course</a></li>
+          <li><a href="../admin/create.php">Create Course</a></li>
           <li><a href="../index.php">Sign out</a></li>
 
         </ul>
@@ -278,25 +281,29 @@ Because we know that programming languages ​​and technical skills alone are 
       </div>
     </section><!-- End Services Section -->
 
+
     <!-- ======= Values Section ======= -->
     <section id="values" class="values">
       <div class="container">
+        <h1 style="text-align: center;">Users</h1>
         <div id="todo" class="row">
-      <?php $sql="SELECT * FROM course ";
+      <?php $sql="SELECT * FROM user WHERE status='user'";
 
 $result=mysqli_query($conn,$sql);
 if ($result->num_rows == 0){
-  echo "<h2>There are no Courses at the moment</h2>";
+  echo "<h2>There are no user at the moment</h2>";
 }elseif ($result->num_rows == 1) {
   $row=$result->fetch_assoc();
   echo '<div class="col-md-6 d-flex align-items-stretch" data-aos="fade-up">
-            <div class="card" style="background-image: url('.$row["course_img"].');">
+            <div class="card" style="background-image: url('.$row["user_img"].');">
               <div class="card-body">
-                <h5 class="card-title"><a href="">'.$row["title"].'</a></h5>
-                <p class="card-text">'.$row["description"].'</p>
-                <div class="read-more"><a href="update.php?id='.$row["course_id"].'"><i class="icofont-arrow-right"></i> Update</a></div>
-                <input class="todo" style="background-color: Tomato;  border-radius: 10px;"  value="Delete"  type="submit">
-                  <input  name="course"  value="'.$value["course_id"].'" type="hidden">
+                <h5 class="card-title"><a href="">'.$row["first_name"].' '.$row["last_name"].'</a></h5>
+                <p class="card-text">status: '.$row["status"].'</p>
+                
+                <input class="todo1"  value="Block"  type="submit"style="background-color: Tomato;  border-radius: 10px;">
+                  <input  name="user"  value="'.$row["user_id"].'" type="hidden">
+                   <input class="todo2"  value="As Admin"  type="submit"style="background-color: Tomato;  border-radius: 10px;">
+                  <input  name="user"  value="'.$value["user_id"].'" type="hidden">
               </div>
             </div>
           </div>';
@@ -304,13 +311,15 @@ if ($result->num_rows == 0){
   $rows= $result->fetch_all(MYSQLI_ASSOC);
   foreach($rows as $key => $value){
 echo '<div class="col-md-6 d-flex align-items-stretch" data-aos="fade-up" style="margin-top:50px;">
-<div class="card" style="background-image: url('.$value["course_img"].');">
+<div class="card" style="background-image: url('.$value["user_img"].');">
 <div class="card-body">
-                <h5 class="card-title"><a href="">'.$value["title"].'</a></h5>
-                <p class="card-text">'.$value["description"].'</p>
-                <div class="read-more"><a href="update.php?id='.$value["course_id"].'"><i class="icofont-arrow-right"></i> Update</a></div>
-                  <input class="todo"   value="Delete"  type="submit"style="background-color: Tomato;  border-radius: 10px;">
-                  <input  name="course"  value="'.$value["course_id"].'" type="hidden">
+                <h5 class="card-title"><a href="">'.$value["first_name"].' '.$value["last_name"].'</a></h5>
+                <p class="card-text">status '.$value["status"].'</p>
+                
+                  <input class="todo1"  value="Block"  type="submit"style="background-color: Tomato;  border-radius: 10px;">
+                  <input  name="user"  value="'.$value["user_id"].'" type="hidden">
+                  <input class="todo2"  value="As Admin"  type="submit"style="background-color: Tomato;  border-radius: 10px;">
+                  <input  name="user"  value="'.$value["user_id"].'" type="hidden">
                   </div>
             </div>
           </div>';
@@ -330,7 +339,7 @@ echo '<div class="col-md-6 d-flex align-items-stretch" data-aos="fade-up" style=
 
         <div class="owl-carousel testimonials-carousel">
 
-          <?php $sql="SELECT * FROM user WHERE status='admin'";
+ <?php $sql="SELECT * FROM user WHERE status='admin'";
 
 $result=mysqli_query($conn,$sql);
 if ($result->num_rows == 0){
@@ -346,7 +355,7 @@ if ($result->num_rows == 0){
               He is Admin in our website and teaches in our courses
               <i class="bx bxs-quote-alt-right quote-icon-right"></i>
             </p>
-            <input class="todo3"  value="As user"  type="submit">
+            <input class="todo3"  value="As user"  type="submit"style="background-color: Tomato;  border-radius: 10px;">
                   <input  name="user"  value="'.$value["user_id"].'" type="hidden">
           </div>
 ';
@@ -354,7 +363,6 @@ if ($result->num_rows == 0){
   $rows= $result->fetch_all(MYSQLI_ASSOC);
   foreach($rows as $key => $value){
 echo ' <div class="testimonial-item">
-             <h3>ADMINS</h3>
             <img src="'.$value["user_img"].'" class="testimonial-img" alt="">
             <h3>'.$value["first_name"].' '.$value["last_name"].'</h3>
             <h4>'.$value["email"].'</h4>
@@ -363,7 +371,8 @@ echo ' <div class="testimonial-item">
               He is Admin in our website and teaches in our courses
               <i class="bx bxs-quote-alt-right quote-icon-right"></i>
             </p>
-            
+            <input class="todo3"  value="As user"  type="submit"style="background-color: Tomato;  border-radius: 10px;">
+                  <input  name="user"  value="'.$value["user_id"].'" type="hidden">
           </div>';
 
 
@@ -374,7 +383,7 @@ echo ' <div class="testimonial-item">
       </div>
     </section><!-- End Testimonials Section -->
 
-
+  
     <!-- ======= Team Section ======= -->
     <section id="team" class="team section-bg">
       <div class="container">
@@ -696,7 +705,6 @@ echo ' <div class="testimonial-item">
       </div>
     </div>
   </footer><!-- End Footer -->
-
   <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
 
   <!-- Vendor JS Files -->
@@ -716,23 +724,91 @@ echo ' <div class="testimonial-item">
 <script>
   var request;
   
-$('.todo').click(function(event){
+$('.todo1').click(function(event){
 event.preventDefault();
 
    var $inputs = $(this).parent().find("input, select, button, textarea");
   // Serialize the data in the form
   var serializedData = $inputs.serialize();
-     console.log(serializedData);
+    
    request = $.ajax({
-       url: "delete.php",
+       url: "block.php",
       type: "post",
        data:serializedData
    });
 
    request.done(function (response, textStatus, jqXHR){
        // Log a message to the console
-       console.log(response);
-      document.getElementById("todo").innerHTML=response;
+       console.log(response);  
+   });
+
+   // Callback handler that will be called on failure
+   request.fail(function (jqXHR, textStatus, errorThrown){
+       // Log the error to the console
+       console.error(
+           "The following error occurred: "+
+           textStatus, errorThrown
+       );
+   }
+
+)
+
+ 
+})
+
+
+
+  
+$('.todo2').click(function(event){
+event.preventDefault();
+
+   var $inputs = $(this).parent().find("input, select, button, textarea");
+  // Serialize the data in the form
+  var serializedData = $inputs.serialize();
+    
+   request = $.ajax({
+       url: "as_admin.php",
+      type: "post",
+       data:serializedData
+   });
+
+   request.done(function (response, textStatus, jqXHR){
+       // Log a message to the console
+       console.log(response);   
+   });
+
+   // Callback handler that will be called on failure
+   request.fail(function (jqXHR, textStatus, errorThrown){
+       // Log the error to the console
+       console.error(
+           "The following error occurred: "+
+           textStatus, errorThrown
+       );
+   }
+
+)
+
+ 
+})
+
+
+  
+$('.todo3').click(function(event){
+event.preventDefault();
+
+   var $inputs = $(this).parent().find("input, select, button, textarea");
+  // Serialize the data in the form
+  var serializedData = $inputs.serialize();
+    
+   request = $.ajax({
+       url: "as_user.php",
+      type: "post",
+       data:serializedData
+   });
+
+   request.done(function (response, textStatus, jqXHR){
+       // Log a message to the console
+       console.log(response);   
    });
 
    // Callback handler that will be called on failure

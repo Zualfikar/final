@@ -21,7 +21,7 @@ $userRow=mysqli_fetch_array($res, MYSQLI_ASSOC);
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Flexor Bootstrap Template - Index</title>
+  <title>codefactory</title>
   <meta content="" name="descriptison">
   <meta content="" name="keywords">
 
@@ -58,14 +58,14 @@ $userRow=mysqli_fetch_array($res, MYSQLI_ASSOC);
     <div class="container d-flex">
       <div class="contact-info mr-auto">
         <ul>
-          <li><i class="icofont-envelope"></i><a href="mailto:contact@example.com">contact@example.com</a></li>
-          <li><i class="icofont-phone"></i> +1 5589 55488 55</li>
+          <li><i class="icofont-envelope"></i><a href="mailto:contact@example.com">codefactory@example.com</a></li>
+          <li><i class="icofont-phone"></i> +1 666 6666 55</li>
           <li><i class="icofont-clock-time icofont-flip-horizontal"></i> Mon-Fri 9am - 5pm</li>
         </ul>
 
       </div>
       <div class="cta">
-        <a href="#about" class="scrollto">Get Started</a>
+        <a href="cart.php" class="scrollto">Go to Cart</a>
       </div>
     </div>
   </section>
@@ -75,7 +75,7 @@ $userRow=mysqli_fetch_array($res, MYSQLI_ASSOC);
     <div class="container d-flex">
 
       <div class="logo mr-auto">
-        <h1 class="text-light"><a href="index.html"><span>Flexor</span></a></h1>
+        <h1 class="text-light"><a href="index.html"><span>Code Factory</span></a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html"><img src="../assets/img/logo.png" alt="" class="img-fluid"></a>-->
       </div>
@@ -84,28 +84,12 @@ $userRow=mysqli_fetch_array($res, MYSQLI_ASSOC);
         <ul>
           <li class="active"><a href="index.html">Home</a></li>
           <li><a href="#about">About</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#services">Courses</a></li>
+          
           <li><a href="#team">Team</a></li>
           <li><a href="#pricing">Pricing</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li class="drop-down"><a href="">Drop Down</a>
-            <ul>
-              <li><a href="#">Drop Down 1</a></li>
-              <li class="drop-down"><a href="#">Drop Down 2</a>
-                <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
-              <li><a href="#">Drop Down 5</a></li>
-            </ul>
-          </li>
+         
+          
           <li><a href="#contact">Contact</a></li>
 
         </ul>
@@ -117,11 +101,11 @@ $userRow=mysqli_fetch_array($res, MYSQLI_ASSOC);
   <!-- ======= Hero Section ======= -->
   <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
     <div class="container" data-aos="fade-in">
-      <h1>Welcome to Flexor</h1>
-      <h2>We are team of talanted designers making websites with Bootstrap</h2>
+      <h1>Welcome to Code Factory</h1>
+      <h2>School of Development Courses</h2>
       <div class="d-flex align-items-center">
         <i class="bx bxs-right-arrow-alt get-started-icon"></i>
-        <a href="#about" class="btn-get-started scrollto">Get Started</a>
+        <a href="#services" class="btn-get-started scrollto">Get Started</a>
       </div>
     </div>
   </section><!-- End Hero -->
@@ -135,13 +119,12 @@ $userRow=mysqli_fetch_array($res, MYSQLI_ASSOC);
         <div class="row">
           <div class="col-xl-4 col-lg-5" data-aos="fade-up">
             <div class="content">
-              <h3>Why Choose Flexor for your company website?</h3>
+              <h3>Why Should I Become a Full Stack Web Developer?</h3>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                Asperiores dolores sed et. Tenetur quia eos. Autem tempore quibusdam vel necessitatibus optio ad corporis.
+                The efficiency of IT enables companies in all industries to be competitive and innovative. V.a. Since the GDPR came into force, every company has to deal professionally with the protection of its customer data.
               </p>
               <div class="text-center">
-                <a href="#" class="more-btn">Learn More <i class="bx bx-chevron-right"></i></a>
+                <a href="#services" class="more-btn">Learn More <i class="bx bx-chevron-right"></i></a>
               </div>
             </div>
           </div>
@@ -151,22 +134,23 @@ $userRow=mysqli_fetch_array($res, MYSQLI_ASSOC);
                 <div class="col-xl-4 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
                   <div class="icon-box mt-4 mt-xl-0">
                     <i class="bx bx-receipt"></i>
-                    <h4>Corporis voluptates sit</h4>
-                    <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>
+                    <h4>In 15 weeks to Junior developer</h4>
+                    <p>Learn everything you need to start your career with web development and IT in just 15 weeks. Work hands-on on practical examples from day one!</p>
                   </div>
                 </div>
                 <div class="col-xl-4 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
                   <div class="icon-box mt-4 mt-xl-0">
                     <i class="bx bx-cube-alt"></i>
-                    <h4>Ullamco laboris ladore pan</h4>
-                    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
+                    <h4>Hands-on learning </h4>
+                    <p>
+All of our courses are characterized by a maximum of practical work. We believe that programming can only be learned by programming. That is why we work from day one in teams of two and groups on project-related tasks</p>
                   </div>
                 </div>
                 <div class="col-xl-4 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
                   <div class="icon-box mt-4 mt-xl-0">
                     <i class="bx bx-images"></i>
-                    <h4>Labore consequatur</h4>
-                    <p>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere</p>
+                    <h4>Gain experience in real customer projects</h4>
+                    <p>The final projects of our students come from real customers, from NGOs to medium-sized companies. With these references and job references in the portfolio, starting your career is easy.</p>
                   </div>
                 </div>
               </div>
@@ -182,31 +166,38 @@ $userRow=mysqli_fetch_array($res, MYSQLI_ASSOC);
       <div class="container">
 
         <div class="row">
-          <div class="col-xl-5 col-lg-6 video-box d-flex justify-content-center align-items-stretch" data-aos="fade-right">
-            <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="venobox play-btn mb-4" data-vbtype="video" data-autoplay="true"></a>
+          <div class="col-xl-5 col-lg-6 video-box d-flex justify-content-center align-items-stretch" style="background: url('../assets/img/video_box.jpg'); center center no-repeat;
+  background-size: cover;
+  min-height: 500px;" data-aos="fade-right">
+            <a href="https://www.youtube.com/watch?v=LK3cLNexNFk" class="venobox play-btn mb-4" data-vbtype="video" data-autoplay="true"></a>
           </div>
 
           <div class="col-xl-7 col-lg-6 icon-boxes d-flex flex-column align-items-stretch justify-content-center py-5 px-lg-5">
             <h4 data-aos="fade-up">About us</h4>
-            <h3 data-aos="fade-up">Enim quis est voluptatibus aliquid consequatur fugiat</h3>
-            <p data-aos="fade-up">Esse voluptas cumque vel exercitationem. Reiciendis est hic accusamus. Non ipsam et sed minima temporibus laudantium. Soluta voluptate sed facere corporis dolores excepturi. Libero laboriosam sint et id nulla tenetur. Suscipit aut voluptate.</p>
+            <h3 data-aos="fade-up">History</h3>
+            <p data-aos="fade-up">Founded in 2016, CodeFactory Vienna follows the concept of programming boot camps from the Anglo-American region. The goal is a time-efficient and very practical training with the aim of getting started as a junior developer as quickly as possible. The format is particularly aimed at career changers, people who want to change careers in the second or third educational path and people who are interested in application-oriented training.</p>
 
             <div class="icon-box" data-aos="fade-up">
               <div class="icon"><i class="bx bx-fingerprint"></i></div>
-              <h4 class="title"><a href="">Lorem Ipsum</a></h4>
-              <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
+              <h4 class="title"><a href="">large portfolio</a></h4>
+              
+
+
             </div>
 
             <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
               <div class="icon"><i class="bx bx-gift"></i></div>
-              <h4 class="title"><a href="">Nemo Enim</a></h4>
-              <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
+              <h4 class="title"><a href=""> celebrations and new friends</a></h4>
+              <h4 class="title"><a href="">real customer projects
+</a></h4>
             </div>
 
             <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
               <div class="icon"><i class="bx bx-atom"></i></div>
-              <h4 class="title"><a href="">Dine Pad</a></h4>
-              <p class="description">Explicabo est voluptatum asperiores consequatur magnam. Et veritatis odit. Sunt aut deserunt minus aut eligendi omnis</p>
+              <h4 class="title"><a href="">Funding options
+Fun</a></h4>
+              <h4 class="title"><a href="">Networking with future employers
+</a></h4>
             </div>
 
           </div>
@@ -216,73 +207,58 @@ $userRow=mysqli_fetch_array($res, MYSQLI_ASSOC);
     </section><!-- End About Section -->
 
     <!-- ======= Clients Section ======= -->
-    <section id="clients" class="clients">
-      <div class="container" data-aos="fade-up">
-
-        <div class="owl-carousel clients-carousel">
-          <img src="../assets/img/clients/client-1.png" alt="">
-          <img src="../assets/img/clients/client-2.png" alt="">
-          <img src="../assets/img/clients/client-3.png" alt="">
-          <img src="../assets/img/clients/client-4.png" alt="">
-          <img src="../assets/img/clients/client-5.png" alt="">
-          <img src="../assets/img/clients/client-6.png" alt="">
-          <img src="../assets/img/clients/client-7.png" alt="">
-          <img src="../assets/img/clients/client-8.png" alt="">
-        </div>
-
-      </div>
-    </section><!-- End Clients Section -->
-
+    
     <!-- ======= Services Section ======= -->
     <section id="services" class="services section-bg">
       <div class="container">
 
         <div class="section-title" data-aos="fade-up">
           <h2>Services</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <p>What distinguishes CodeFactory from other training programs and institutions?<br>
+Because we know that programming languages ​​and technical skills alone are not enough, we attach great importance to holistic training, part-time skills and networking with the scene during the training. Training at CodeFactory includes the following.</p>
         </div>
 
         <div class="row">
           <div class="col-lg-4 col-md-6" data-aos="fade-up">
             <div class="icon-box">
               <div class="icon"><i class="icofont-computer"></i></div>
-              <h4 class="title"><a href="">Lorem Ipsum</a></h4>
-              <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
+              <h4 class="title"><a href="">Lunchspeaker</a></h4>
+              <p class="description">Every Wednesday a professional from industry and practice comes to chat with you in a relaxed atmosphere about job opportunities, technical developments and trends and much more.</p>
             </div>
           </div>
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
             <div class="icon-box">
               <div class="icon"><i class="icofont-chart-bar-graph"></i></div>
-              <h4 class="title"><a href="">Dolor Sitema</a></h4>
-              <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
+              <h4 class="title"><a href="">Excursions</a></h4>
+              <p class="description">There are 2 excursions to well-known IT companies per full stack course. Private tours and exclusive behind-the-scenes glimpses included.</p>
             </div>
           </div>
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
             <div class="icon-box">
               <div class="icon"><i class="icofont-earth"></i></div>
-              <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
-              <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
+              <h4 class="title"><a href="">Practical projects</a></h4>
+              <p class="description"> Two large projects are worked out for each course, one in the frontend area and one towards the end of the course.</p>
             </div>
           </div>
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
             <div class="icon-box">
               <div class="icon"><i class="icofont-image"></i></div>
-              <h4 class="title"><a href="">Magni Dolores</a></h4>
-              <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+              <h4 class="title"><a href="">International certifications</a></h4>
+              <p class="description"> After completing the course, our students have the opportunity to acquire 2 internationally recognized certifications that are approved by an external partner. </p>
             </div>
           </div>
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
             <div class="icon-box">
               <div class="icon"><i class="icofont-settings"></i></div>
-              <h4 class="title"><a href="">Nemo Enim</a></h4>
-              <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
+              <h4 class="title"><a href="">Large portfolio</a></h4>
+              <p class="description"> From week one, our students build up their own portfolio and projects and practical demonstrations.</p>
             </div>
           </div>
           <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
             <div class="icon-box">
               <div class="icon"><i class="icofont-tasks-alt"></i></div>
-              <h4 class="title"><a href="">Eiusmod Tempor</a></h4>
-              <p class="description">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi</p>
+              <h4 class="title"><a href="">Application training</a></h4>
+              <p class="description"> There is our Career Support Service for everyone who starts their career in IT uncertainties and questions.</p>
             </div>
           </div>
         </div>
@@ -293,6 +269,7 @@ $userRow=mysqli_fetch_array($res, MYSQLI_ASSOC);
     <!-- ======= Values Section ======= -->
     <section id="values" class="values">
       <div class="container">
+         <h1 style="text-align: center;">Courses</h1>
         <div class="row">
       <?php $sql="SELECT * FROM course ";
 
@@ -314,12 +291,12 @@ if ($result->num_rows == 0){
   $rows= $result->fetch_all(MYSQLI_ASSOC);
 
   foreach($rows as $key => $value){
-echo '<div class="col-md-6 d-flex align-items-stretch" data-aos="fade-up">
-            <div class="card" style="background-image: url(../assets/img/values-1.jpg);">
+echo '<div style="margin-top:20px;" class="col-md-6 d-flex align-items-stretch" data-aos="fade-up">
+            <div class="card" style="background-image: url('.$value["course_img"].');">
               <div class="card-body">
-                <h5 class="card-title"><a href="">Our Mission</a></h5>
-                <p class="card-text">Lorem ipsum dolor sit amet, consectetur elit, sed do eiusmod tempor ut labore et dolore magna aliqua.</p>
-                <div class="read-more"><a href="#"><i class="icofont-arrow-right"></i> Read More</a></div>
+                <h5 class="card-title"><a href="">'.$value["title"].'</a></h5>
+                <p class="card-text">'.$value["description"].'</p>
+                <div class="read-more"><a href="details-single.php?id='.$value["course_id"].'"><i class="icofont-arrow-right"></i> Read More</a></div>
               </div>
             </div>
           </div>';
@@ -339,182 +316,50 @@ echo '<div class="col-md-6 d-flex align-items-stretch" data-aos="fade-up">
 
         <div class="owl-carousel testimonials-carousel">
 
-          <div class="testimonial-item">
-            <img src="../assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="">
-            <h3>Saul Goodman</h3>
-            <h4>Ceo  Founder</h4>
-            <p>
-              <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-              Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
-              <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-            </p>
-          </div>
+          <?php $sql="SELECT * FROM user WHERE status='admin'";
 
-          <div class="testimonial-item">
-            <img src="../assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="">
-            <h3>Sara Wilsson</h3>
-            <h4>Designer</h4>
+$result=mysqli_query($conn,$sql);
+if ($result->num_rows == 0){
+  echo "<h2>There are no admin at the moment</h2>";
+}elseif ($result->num_rows == 1) {
+  $row=$result->fetch_assoc();
+  echo ' <div class="testimonial-item">
+            <img src="'.$row["user_img"].'" class="testimonial-img" alt="">
+            <h3>'.$row["first_name"].' '.$row["last_name"].'</h3>
+            <h4>'.$row["email"].'</h4>
             <p>
               <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-              Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
+              He is Admin in our website and teaches in our courses
               <i class="bx bxs-quote-alt-right quote-icon-right"></i>
             </p>
+            <input class="todo3"  value="As user"  type="submit">
+                  <input  name="user"  value="'.$value["user_id"].'" type="hidden">
           </div>
+';
+}else{
+  $rows= $result->fetch_all(MYSQLI_ASSOC);
+  foreach($rows as $key => $value){
+echo ' <div class="testimonial-item">
+             <h3>ADMINS</h3>
+            <img src="'.$value["user_img"].'" class="testimonial-img" alt="">
+            <h3>'.$value["first_name"].' '.$value["last_name"].'</h3>
+            <h4>'.$value["email"].'</h4>
+            <p>
+              <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+              He is Admin in our website and teaches in our courses
+              <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+            </p>
+            
+          </div>';
 
-          <div class="testimonial-item">
-            <img src="../assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="">
-            <h3>Jena Karlis</h3>
-            <h4>Store Owner</h4>
-            <p>
-              <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-              Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
-              <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-            </p>
-          </div>
 
-          <div class="testimonial-item">
-            <img src="../assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="">
-            <h3>Matt Brandon</h3>
-            <h4>Freelancer</h4>
-            <p>
-              <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-              Fugiat enim eram quae cillum dolore dolor amet nulla culpa multos export minim fugiat minim velit minim dolor enim duis veniam ipsum anim magna sunt elit fore quem dolore labore illum veniam.
-              <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-            </p>
-          </div>
-
-          <div class="testimonial-item">
-            <img src="../assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="">
-            <h3>John Larson</h3>
-            <h4>Entrepreneur</h4>
-            <p>
-              <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-              Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
-              <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-            </p>
-          </div>
+  }} ?>
 
         </div>
 
       </div>
     </section><!-- End Testimonials Section -->
 
-    <!-- ======= Portfolio Section ======= -->
-    <section id="portfolio" class="Portfolio">
-      <div class="container">
-
-        <div class="section-title">
-          <h2 data-aos="fade-up">Portfolio</h2>
-          <p data-aos="fade-up">Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
-        </div>
-
-        <div class="row" data-aos="fade-up" data-aos-delay="100">
-          <div class="col-lg-12 d-flex justify-content-center">
-            <ul id="portfolio-flters">
-              <li data-filter="*" class="filter-active">All</li>
-              <li data-filter=".filter-app">App</li>
-              <li data-filter=".filter-card">Card</li>
-              <li data-filter=".filter-web">Web</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <img src="../assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>App 1</h4>
-              <p>App</p>
-              <a href="../assets/img/portfolio/portfolio-1.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
-              <a href="#" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <img src="../assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Web 3</h4>
-              <p>Web</p>
-              <a href="../assets/img/portfolio/portfolio-2.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
-              <a href="#" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <img src="../assets/img/portfolio/portfolio-3.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>App 2</h4>
-              <p>App</p>
-              <a href="../assets/img/portfolio/portfolio-3.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="App 2"><i class="bx bx-plus"></i></a>
-              <a href="#" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <img src="../assets/img/portfolio/portfolio-4.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Card 2</h4>
-              <p>Card</p>
-              <a href="../assets/img/portfolio/portfolio-4.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="Card 2"><i class="bx bx-plus"></i></a>
-              <a href="#" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <img src="../assets/img/portfolio/portfolio-5.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Web 2</h4>
-              <p>Web</p>
-              <a href="../assets/img/portfolio/portfolio-5.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="Web 2"><i class="bx bx-plus"></i></a>
-              <a href="#" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <img src="../assets/img/portfolio/portfolio-6.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>App 3</h4>
-              <p>App</p>
-              <a href="../assets/img/portfolio/portfolio-6.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="App 3"><i class="bx bx-plus"></i></a>
-              <a href="#" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <img src="../assets/img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Card 1</h4>
-              <p>Card</p>
-              <a href="../assets/img/portfolio/portfolio-7.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="Card 1"><i class="bx bx-plus"></i></a>
-              <a href="#" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <img src="../assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Card 3</h4>
-              <p>Card</p>
-              <a href="../assets/img/portfolio/portfolio-8.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="Card 3"><i class="bx bx-plus"></i></a>
-              <a href="#" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <img src="../assets/img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Web 3</h4>
-              <p>Web</p>
-              <a href="../assets/img/portfolio/portfolio-9.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
-              <a href="#" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section><!-- End Portfolio Section -->
 
     <!-- ======= Team Section ======= -->
     <section id="team" class="team section-bg">
@@ -522,7 +367,7 @@ echo '<div class="col-md-6 d-flex align-items-stretch" data-aos="fade-up">
 
         <div class="section-title">
           <h2 data-aos="fade-up">Team</h2>
-          <p data-aos="fade-up">Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <p data-aos="fade-up">Here you can see our team and some information about us.</p>
         </div>
 
         <div class="row">
@@ -539,8 +384,8 @@ echo '<div class="col-md-6 d-flex align-items-stretch" data-aos="fade-up">
                 </div>
               </div>
               <div class="member-info">
-                <h4>Walter White</h4>
-                <span>Chief Executive Officer</span>
+                <h4>Acilio</h4>
+                <span>Front End</span>
               </div>
             </div>
           </div>
@@ -557,8 +402,8 @@ echo '<div class="col-md-6 d-flex align-items-stretch" data-aos="fade-up">
                 </div>
               </div>
               <div class="member-info">
-                <h4>Sarah Jhonson</h4>
-                <span>Product Manager</span>
+                <h4>Mariana</h4>
+                <span>Back End</span>
               </div>
             </div>
           </div>
@@ -575,8 +420,8 @@ echo '<div class="col-md-6 d-flex align-items-stretch" data-aos="fade-up">
                 </div>
               </div>
               <div class="member-info">
-                <h4>William Anderson</h4>
-                <span>CTO</span>
+                <h4>Serri</h4>
+                <span>Back End</span>
               </div>
             </div>
           </div>
@@ -593,8 +438,8 @@ echo '<div class="col-md-6 d-flex align-items-stretch" data-aos="fade-up">
                 </div>
               </div>
               <div class="member-info">
-                <h4>Amanda Jepson</h4>
-                <span>Accountant</span>
+                <h4>Theo</h4>
+                <span>Front End</span>
               </div>
             </div>
           </div>
@@ -610,58 +455,57 @@ echo '<div class="col-md-6 d-flex align-items-stretch" data-aos="fade-up">
 
         <div class="section-title">
           <h2 data-aos="fade-up">Pricing</h2>
-          <p data-aos="fade-up">Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <p data-aos="fade-up"></p>
         </div>
 
         <div class="row">
 
           <div class="col-lg-3 col-md-6" data-aos="fade-up">
             <div class="box">
-              <h3>Free</h3>
-              <h4><sup>$</sup>0<span> / month</span></h4>
+              <h3>Free Siminar</h3>
+              <h4><sup>$</sup>0<span> </span></h4>
               <ul>
-                <li>Aida dere</li>
-                <li>Nec feugiat nisl</li>
-                <li>Nulla at volutpat dola</li>
-                <li class="na">Pharetra massa</li>
-                <li class="na">Massa ultricies mi</li>
+                <li>Informations about courses</li>
+                <li>How you can pay</li>
+                <li>Take a look about the content</li>
+                
               </ul>
               <div class="btn-wrap">
-                <a href="#" class="btn-buy">Buy Now</a>
+                <a href="#" class="btn-buy">Bock Now</a>
               </div>
             </div>
           </div>
 
           <div class="col-lg-3 col-md-6 mt-4 mt-md-0" data-aos="fade-up" data-aos-delay="100">
             <div class="box featured">
-              <h3>Business</h3>
-              <h4><sup>$</sup>19<span> / month</span></h4>
+              <h3>Front End</h3>
+              <h4><sup>€</sup>2450<span> </span></h4>
               <ul>
-                <li>Aida dere</li>
-                <li>Nec feugiat nisl</li>
-                <li>Nulla at volutpat dola</li>
-                <li>Pharetra massa</li>
-                <li class="na">Massa ultricies mi</li>
+                <li>Version Control (Git -GitHub)</li>
+                <li>HTML5</li>
+                <li>CSS3 Bootstrap</li>
+                <li>JavaScript jQuery</li>
+                <li >TypeScript Angular 6.0</li>
               </ul>
               <div class="btn-wrap">
-                <a href="#" class="btn-buy">Buy Now</a>
+                <a href="#" class="btn-buy">Bock Now</a>
               </div>
             </div>
           </div>
 
           <div class="col-lg-3 col-md-6 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="200">
             <div class="box">
-              <h3>Developer</h3>
-              <h4><sup>$</sup>29<span> / month</span></h4>
+              <h3>Back End</h3>
+              <h4><sup>$</sup>2490<span> </span></h4>
               <ul>
-                <li>Aida dere</li>
-                <li>Nec feugiat nisl</li>
-                <li>Nulla at volutpat dola</li>
-                <li>Pharetra massa</li>
-                <li>Massa ultricies mi</li>
+                <li>SQL (MySQL)</li>
+                <li>PHP</li>
+                <li>Symfony PHP framework</li>
+                <li>WordPress</li>
+                <li>Software Testing</li>
               </ul>
               <div class="btn-wrap">
-                <a href="#" class="btn-buy">Buy Now</a>
+                <a href="#" class="btn-buy">Bock Now</a>
               </div>
             </div>
           </div>
@@ -669,17 +513,17 @@ echo '<div class="col-md-6 d-flex align-items-stretch" data-aos="fade-up">
           <div class="col-lg-3 col-md-6 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="300">
             <div class="box">
               <span class="advanced">Advanced</span>
-              <h3>Ultimate</h3>
-              <h4><sup>$</sup>49<span> / month</span></h4>
+              <h3>Full Stack</h3>
+              <h4><sup>$</sup>3990<span></span></h4>
               <ul>
-                <li>Aida dere</li>
-                <li>Nec feugiat nisl</li>
-                <li>Nulla at volutpat dola</li>
-                <li>Pharetra massa</li>
-                <li>Massa ultricies mi</li>
+                <li>HTML5 CSS3 JavaScript</li>
+                <li>jQuery Bootstrap TypeScript</li>
+                <li>Angular 6.0 SQL (MySQL)</li>
+                <li>PHP AJAX Symfony</li>
+                <li>WordPress Software Testing</li>
               </ul>
               <div class="btn-wrap">
-                <a href="#" class="btn-buy">Buy Now</a>
+                <a href="#" class="btn-buy">Bock Now</a>
               </div>
             </div>
           </div>
@@ -689,67 +533,7 @@ echo '<div class="col-md-6 d-flex align-items-stretch" data-aos="fade-up">
       </div>
     </section><!-- End Pricing Section -->
 
-    <!-- ======= F.A.Q Section ======= -->
-    <section id="faq" class="faq section-bg">
-      <div class="container">
-
-        <div class="section-title">
-          <h2 data-aos="fade-up">F.A.Q</h2>
-          <p data-aos="fade-up">Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
-        </div>
-
-        <div class="faq-list">
-          <ul>
-            <li data-aos="fade-up">
-              <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" class="collapse" href="#faq-list-1">Non consectetur a erat nam at lectus urna duis? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
-              <div id="faq-list-1" class="collapse show" data-parent=".faq-list">
-                <p>
-                  Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.
-                </p>
-              </div>
-            </li>
-
-            <li data-aos="fade-up" data-aos-delay="100">
-              <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" href="#faq-list-2" class="collapsed">Feugiat scelerisque varius morbi enim nunc? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
-              <div id="faq-list-2" class="collapse" data-parent=".faq-list">
-                <p>
-                  Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.
-                </p>
-              </div>
-            </li>
-
-            <li data-aos="fade-up" data-aos-delay="200">
-              <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" href="#faq-list-3" class="collapsed">Dolor sit amet consectetur adipiscing elit? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
-              <div id="faq-list-3" class="collapse" data-parent=".faq-list">
-                <p>
-                  Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus. Urna molestie at elementum eu facilisis sed odio morbi quis
-                </p>
-              </div>
-            </li>
-
-            <li data-aos="fade-up" data-aos-delay="300">
-              <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" href="#faq-list-4" class="collapsed">Tempus quam pellentesque nec nam aliquam sem et tortor consequat? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
-              <div id="faq-list-4" class="collapse" data-parent=".faq-list">
-                <p>
-                  Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est ante in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit adipiscing bibendum est. Purus gravida quis blandit turpis cursus in.
-                </p>
-              </div>
-            </li>
-
-            <li data-aos="fade-up" data-aos-delay="400">
-              <i class="bx bx-help-circle icon-help"></i> <a data-toggle="collapse" href="#faq-list-5" class="collapsed">Tortor vitae purus faucibus ornare. Varius vel pharetra vel turpis nunc eget lorem dolor? <i class="bx bx-chevron-down icon-show"></i><i class="bx bx-chevron-up icon-close"></i></a>
-              <div id="faq-list-5" class="collapse" data-parent=".faq-list">
-                <p>
-                  Laoreet sit amet cursus sit amet dictum sit amet justo. Mauris vitae ultricies leo integer malesuada nunc vel. Tincidunt eget nullam non nisi est sit amet. Turpis nunc eget lorem dolor sed. Ut venenatis tellus in metus vulputate eu scelerisque.
-                </p>
-              </div>
-            </li>
-
-          </ul>
-        </div>
-
-      </div>
-    </section><!-- End F.A.Q Section -->
+   
 
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">
@@ -757,7 +541,7 @@ echo '<div class="col-md-6 d-flex align-items-stretch" data-aos="fade-up">
 
         <div class="section-title">
           <h2 data-aos="fade-up">Contact</h2>
-          <p data-aos="fade-up">Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <p data-aos="fade-up">We are here for you contact us.</p>
         </div>
 
         <div class="row justify-content-center">
@@ -766,7 +550,7 @@ echo '<div class="col-md-6 d-flex align-items-stretch" data-aos="fade-up">
             <div class="info-box">
               <i class="bx bx-map"></i>
               <h3>Our Address</h3>
-              <p>A108 Adam Street, New York, NY 535022</p>
+              <p>CodeFactory GmbH Kettenbrückengasse 23/2/12, 1050 Wien</p>
             </div>
           </div>
 
@@ -781,7 +565,7 @@ echo '<div class="col-md-6 d-flex align-items-stretch" data-aos="fade-up">
             <div class="info-box">
               <i class="bx bx-phone-call"></i>
               <h3>Call Us</h3>
-              <p>+1 5589 55488 55<br>+1 6678 254445 41</p>
+              <p>+43 666 6666<br>+43 555 55555 </p>
             </div>
           </div>
         </div>
@@ -831,12 +615,12 @@ echo '<div class="col-md-6 d-flex align-items-stretch" data-aos="fade-up">
         <div class="row">
 
           <div class="col-lg-3 col-md-6 footer-contact">
-            <h3>Flexor</h3>
+            <h3>Code Factory</h3>
             <p>
-              A108 Adam Street <br>
-              New York, NY 535022<br>
-              United States <br><br>
-              <strong>Phone:</strong> +1 5589 55488 55<br>
+               GmbH Kettenbrückengasse 23/2/12 <br>
+               , 1050 Wien<br>
+             AUSTRIA <br><br>
+              <strong>Phone:</strong> +43 66666 55<br>
               <strong>Email:</strong> info@example.com<br>
             </p>
           </div>
@@ -847,8 +631,8 @@ echo '<div class="col-md-6 d-flex align-items-stretch" data-aos="fade-up">
               <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">Courses</a></li>
+              
             </ul>
           </div>
 
@@ -857,15 +641,15 @@ echo '<div class="col-md-6 d-flex align-items-stretch" data-aos="fade-up">
             <ul>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="#">large portfolio</a></li>
+              
               <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
             </ul>
           </div>
 
           <div class="col-lg-4 col-md-6 footer-newsletter">
             <h4>Join Our Newsletter</h4>
-            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
+            <p></p>
             <form action="" method="post">
               <input type="email" name="email"><input type="submit" value="Subscribe">
             </form>
@@ -879,14 +663,14 @@ echo '<div class="col-md-6 d-flex align-items-stretch" data-aos="fade-up">
 
       <div class="mr-lg-auto text-center text-lg-left">
         <div class="copyright">
-          &copy; Copyright <strong><span>Flexor</span></strong>. All Rights Reserved
+          &copy; Copyright <strong><span>Code Factory</span></strong>. All Rights Reserved
         </div>
         <div class="credits">
           <!-- All the links in the footer should remain intact. -->
           <!-- You can delete the links only if you purchased the pro version. -->
           <!-- Licensing information: https://bootstrapmade.com/license/ -->
           <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/flexor-free-multipurpose-bootstrap-template/ -->
-          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+          Designed by <a href="">Zu alfikar Hasan</a>
         </div>
       </div>
       <div class="social-links text-center text-lg-right pt-3 pt-lg-0">

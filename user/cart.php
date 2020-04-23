@@ -8,16 +8,32 @@ if( !isset($_SESSION['user' ]) ) {
  header("Location: ../index.php");
  exit;
 }
+$user_id=$_SESSION['user'];
 // select logged-in users details
-$res=mysqli_query($conn, "SELECT * FROM user WHERE user_id=".$_SESSION['user']);
+$sql1="SELECT * FROM course WHERE course_id = ANY (SELECT course_id FROM c_relation WHERE user_id=$user_id)";
+$result=mysqli_query($conn,$sql1);
 
-$userRow=mysqli_fetch_array($res, MYSQLI_ASSOC);
-if($_GET["id"]){
-  $id=$_GET["id"];
-  $sql="SELECT * FROM course WHERE course_id=$id";
-  $result= mysqli_query($conn,$sql);
-  $row= $result->fetch_assoc();
-}
+$sql2="SELECT * FROM course WHERE course_id = ANY (SELECT course_id FROM c_relation WHERE user_id=$user_id)";
+$res=mysqli_query($conn,$sql2);
+
+    $total;
+if ($res->num_rows == 0){
+  $total=0;
+
+}elseif ($res->num_rows == 1) {
+  $roww=$res->fetch_assoc();
+  $total=$roww["price"];
+  
+}else{
+  $rowss= $res->fetch_all(MYSQLI_ASSOC);
+  foreach($rowss as $key => $value){
+  $total=$total+$value["price"];
+  
+  }} 
+  
+
+
+
  ?>
 
 
@@ -29,7 +45,7 @@ if($_GET["id"]){
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>Blog - Serenity Bootstrap Template</title>
+  <title>your cart</title>
   <meta content="" name="descriptison">
   <meta content="" name="keywords">
 
@@ -66,14 +82,14 @@ if($_GET["id"]){
     <div class="container d-flex">
       <div class="contact-info mr-auto">
         <ul>
-          <li><i class="icofont-envelope"></i><a href="mailto:contact@example.com">contact@example.com</a></li>
-          <li><i class="icofont-phone"></i> +1 5589 55488 55</li>
+          <li><i class="icofont-envelope"></i><a href="mailto:contact@example.com">codefactory@example.com</a></li>
+          <li><i class="icofont-phone"></i> +43 666 6666 55</li>
           <li><i class="icofont-clock-time icofont-flip-horizontal"></i> Mon-Fri 9am - 5pm</li>
         </ul>
 
       </div>
       <div class="cta">
-        <a href="#about" class="scrollto">Get Started</a>
+        <a href="cart.php" class="scrollto">Go to card</a>
       </div>
     </div>
   </section>
@@ -83,38 +99,15 @@ if($_GET["id"]){
     <div class="container d-flex">
 
       <div class="logo mr-auto">
-        <h1 class="text-light"><a href="index.html"><span>Flexor</span></a></h1>
+        <h1 class="text-light"><a href="index.html"><span>Code Factory</span></a></h1>
         <!-- Uncomment below if you prefer to use an image logo -->
         <!-- <a href="index.html"><img src="../assets/img/logo.png" alt="" class="img-fluid"></a>-->
       </div>
 
       <nav class="nav-menu d-none d-lg-block">
         <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#team">Team</a></li>
-          <li><a href="#pricing">Pricing</a></li>
-          <li class="active"><a href="blog.html">Blog</a></li>
-          <li class="drop-down"><a href="">Drop Down</a>
-            <ul>
-              <li><a href="#">Drop Down 1</a></li>
-              <li class="drop-down"><a href="#">Drop Down 2</a>
-                <ul>
-                  <li><a href="#">Deep Drop Down 1</a></li>
-                  <li><a href="#">Deep Drop Down 2</a></li>
-                  <li><a href="#">Deep Drop Down 3</a></li>
-                  <li><a href="#">Deep Drop Down 4</a></li>
-                  <li><a href="#">Deep Drop Down 5</a></li>
-                </ul>
-              </li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
-              <li><a href="#">Drop Down 5</a></li>
-            </ul>
-          </li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="home.php">Go Back to Home</a></li>
+         
 
         </ul>
       </nav><!-- .nav-menu -->
@@ -126,12 +119,11 @@ if($_GET["id"]){
 
     <!-- ======= Breadcrumbs ======= -->
     <section id="breadcrumbs" class="breadcrumbs">
-      <div class="container">
+      <div  class="container">
         <ol>
-          <li><a href="index.html">Home</a></li>
-          <li>Blog</li>
-        </ol>
-        <h2>Blog</h2>
+          <li><a href="home.html">Home</a></li>
+          </ol>
+        <h2>Your Total is :<?php echo $total; ?> €</h2>
       </div>
     </section><!-- End Breadcrumbs -->
 
@@ -139,40 +131,71 @@ if($_GET["id"]){
     <section id="blog" class="blog">
       <div class="container">
 
-        <div class="row">
-
-          <div class="col-lg-4  col-md-6 d-flex align-items-stretch" data-aos="fade-up">
+        <div  class="row">
+<?php 
+if ($result->num_rows == 0){
+  echo "<h2>Your Cart is empty</h2>";
+}elseif ($result->num_rows == 1) {
+  $row=$result->fetch_assoc();
+  echo ' <div class="col-lg-4  col-md-6 d-flex align-items-stretch" data-aos="fade-up">
             <article class="entry">
-
               <div class="entry-img">
-                <img src="../assets/img/blog-1.jpg" alt="" class="img-fluid">
+                <img src="'.$row["course_img"].'" alt="" class="img-fluid">
               </div>
 
               <h2 class="entry-title">
-                <a href="blog-single.html">Dolorum optio tempore voluptas dignissimos cumque fuga qui quibusdam quia</a>
+                <a href="blog-single.html">'.$row["title"].'</a>
               </h2>
 
               <div class="entry-meta">
                 <ul>
-                  <li class="d-flex align-items-center"><i class="icofont-user"></i> <a href="blog-single.html">John Doe</a></li>
-                  <li class="d-flex align-items-center"><i class="icofont-wall-clock"></i> <a href="blog-single.html"><time datetime="2020-01-01">Jan 1, 2020</time></a></li>
+                  <li class="d-flex align-items-center"><i class="icofont-user"></i> <a href="blog-single.html">'.$row["teachers"].'</a></li>
+                  <li class="d-flex align-items-center"><i class="icofont-wall-clock"></i> <a href="blog-single.html"><time datetime="2020-01-01">von '.$row["start_date"].' bis '.$row["end_date"].'</time></a></li>
                 </ul>
               </div>
 
               <div class="entry-content">
-                <p>
-                  Similique neque nam consequuntur ad non maxime aliquam quas. Quibusdam animi praesentium. Aliquam et laboriosam eius aut nostrum quidem aliquid dicta zena prista maraeda talan mas indera.
-                </p>
+                <p>'.$row["description"].'</p>
                 <div class="read-more">
-                  <a href="blog-single.html">Read More</a>
+                   <input class="todo"  value="Delete"  type="submit">
+            <input  name="course"  value="'.$row["course_id"].'" type="hidden">
                 </div>
               </div>
-
             </article><!-- End blog entry -->
-          </div>
+          </div>';
+}else{
+  $rows= $result->fetch_all(MYSQLI_ASSOC);
 
-         
+  foreach($rows as $key => $value){
+echo '<div class="col-lg-4  col-md-6 d-flex align-items-stretch" data-aos="fade-up">
+            <article class="entry">
+              <div class="entry-img">
+                <img src="'.$value["course_img"].'" alt="" class="img-fluid">
+              </div>
 
+              <h2 class="entry-title">
+                <a href="blog-single.html">'.$value["title"].'</a>
+              </h2>
+
+              <div class="entry-meta">
+                <ul>
+                  <li class="d-flex align-items-center"><i class="icofont-user"></i> <a href="blog-single.html">'.$value["teachers"].'</a></li>
+                  <li class="d-flex align-items-center"><i class="icofont-wall-clock"></i> <a href="blog-single.html"><time datetime="2020-01-01">von '.$value["start_date"].' bis '.$value["end_date"].'</time></a></li>
+                </ul>
+              </div>
+
+              <div class="entry-content">
+                <p>'.$value["description"].'</p>
+                <div class="read-more">
+                   <input class="todo"  value="Delete"  type="submit">
+            <input  name="course"  value="'.$value["course_id"].'" type="hidden">
+                </div>
+              </div>
+            </article><!-- End blog entry -->
+          </div>';
+
+
+  }} ?>
       </div>
     </section><!-- End Blog Section -->
 
@@ -186,24 +209,24 @@ if($_GET["id"]){
         <div class="row">
 
           <div class="col-lg-3 col-md-6 footer-contact">
-            <h3>Flexor</h3>
+            <h3>Code Factory</h3>
             <p>
-              A108 Adam Street <br>
-              New York, NY 535022<br>
-              United States <br><br>
-              <strong>Phone:</strong> +1 5589 55488 55<br>
-              <strong>Email:</strong> info@example.com<br>
+              Springergasse 19 <br>
+              Vienna, 1020<br>
+              AUSTRIA <br><br>
+              <strong>Phone:</strong> +1 666 66666 55<br>
+              <strong>Email:</strong> zu_alfikar_hasan@outlook.sa<br>
             </p>
           </div>
 
           <div class="col-lg-2 col-md-6 footer-links">
             <h4>Useful Links</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="home.php">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="home.php">About us</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="home.php">Services</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="home.php">Terms of service</a></li>
+              
             </ul>
           </div>
 
@@ -219,8 +242,8 @@ if($_GET["id"]){
           </div>
 
           <div class="col-lg-4 col-md-6 footer-newsletter">
-            <h4>Join Our Newsletter</h4>
-            <p>Tamen quem nulla quae legam multos aute sint culpa legam noster magna</p>
+            <h4>Zu Alfikar Hasan</h4>
+            <p>We are here for you</p>
             <form action="" method="post">
               <input type="email" name="email"><input type="submit" value="Subscribe">
             </form>
@@ -234,14 +257,14 @@ if($_GET["id"]){
 
       <div class="mr-lg-auto text-center text-lg-left">
         <div class="copyright">
-          &copy; Copyright <strong><span>Flexor</span></strong>. All Rights Reserved
+          &copy; Copyright <strong><span>Code Factory</span></strong>. All Rights Reserved
         </div>
         <div class="credits">
           <!-- All the links in the footer should remain intact. -->
           <!-- You can delete the links only if you purchased the pro version. -->
           <!-- Licensing information: https://bootstrapmade.com/license/ -->
           <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/flexor-free-multipurpose-bootstrap-template/ -->
-          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+          Designed by <a href="https://bootstrapmade.com/">Zu alfikar</a>
         </div>
       </div>
       <div class="social-links text-center text-lg-right pt-3 pt-lg-0">
@@ -269,7 +292,44 @@ if($_GET["id"]){
 
   <!-- Template Main JS File -->
   <script src="../assets/js/main.js"></script>
+<script>
+  var request;
+  
+$('.todo').click(function(event){
+event.preventDefault();
 
+   var $inputs = $(this).parent().find("input, select, button, textarea");
+  // Serialize the data in the form
+  var serializedData = $inputs.serialize();
+    
+   request = $.ajax({
+       url: "delete.php",
+      type: "post",
+       data:serializedData
+   });
+
+   request.done(function (response, textStatus, jqXHR){
+       // Log a message to the console
+       console.log(response);
+     document.getElementById("main").innerHTML=response;
+  
+   });
+
+   // Callback handler that will be called on failure
+   request.fail(function (jqXHR, textStatus, errorThrown){
+       // Log the error to the console
+       console.error(
+           "The following error occurred: "+
+           textStatus, errorThrown
+       );
+   }
+
+)
+
+ 
+})
+
+</script>
 </body>
 
 </html>
